@@ -13,54 +13,57 @@ namespace UnitTestingExercise.Tests
 
             //Arrange
             // create a Calculator object
+            Calculator calc = new Calculator();
             
 
             //Act
                 // call the Add method that is located in the Calculator class
                 // and store its result in a variable named actual
+                int actual = calc.Add(num1, num2, num3);
 
             //Assert
                 //Assert.Equal(expected, actual);
+                Assert.Equal(expected, actual);
         }
 
         [Theory]
-        [InlineData()]//Add test data <-------
+        [InlineData(5,3,2)]//Add test data <-------
         public void SubtractTest(int minuend, int subtrhend, int expected)
         {
-            //Start Step 5 here:
+            // Arrange
+            //Calculator calc = new Calculator();
+            Calculator calc = new Calculator();
 
-            //Arrange
+            // Act
+            int actual = calc.Subtract(minuend, subtrhend);
 
-            //Act
-
-            //Assert
-
+            // Assert
+            Assert.Equal(expected, actual);
         }
-
-        [Theory]
-        [InlineData()]//Add test data <-------
+        [Theory] 
+        [InlineData(4,3,12)]//Add test data <-------
         public void MultiplyTest(int num1, int num2, int expected)
         {
             //Start Step 7 here:
 
             //Arrange
-
+            Calculator calc = new Calculator();
             //Act
-
+            int actual = calc.Multiply(num1, num2);
             //Assert
-
+            Assert.Equal(expected, actual);
         }
 
         [Theory]
-        [InlineData()]//Add test data <-------
+        [InlineData(12,3,4)]//Add test data <-------
         public void DivideTest(int num1, int num2, int expected)
         {
             //Arrange
-
+            Calculator calc = new Calculator();
             //Act
-
+            int actual = calc.Divide(num1, num2);
             //Assert
-
+            Assert.Equal(expected, actual);
         }
 
     }
